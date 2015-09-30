@@ -1,0 +1,7 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <ul class="main-menu">
+        {% include "AppBundle:Disk:folder_level.html.twig" with {'folders':folders} only %}
+    </ul>
+{% endblock %}

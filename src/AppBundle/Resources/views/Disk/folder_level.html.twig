@@ -1,0 +1,11 @@
+<!--includes/folder_level.html.twig-->
+{% for folder in folders %}
+    <li>
+        <a href="{{ folder.path }}">{{ folder.name }}</a>
+        {% if folder.getChildren().count() %}
+            <ul>
+                {% include "AppBundle:Disk:folder_level.html.twig" with {'folders': folder.getChildren()} %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}
